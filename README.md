@@ -8,6 +8,8 @@ P.S. the original code is from: https://github.com/judygab/web-dev-projects/tree
 
 # Project screen shot
 
+![project screen shot](https://github.com/yangyaaaa/reactPortfolio/blob/master/screenshot.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
