@@ -1,3 +1,13 @@
+# Project name: My personal portfolio website
+
+This is a portfolio website based on React.js
+The website includes my projects and skills. I also designed my logo with a caticorn.
+It means everything is possible if you dare to dream about it!
+I hope you enjoying that!
+P.S. the original code is from: https://github.com/judygab/web-dev-projects/tree/main/personal-portfolio
+
+# Project screen shot
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
