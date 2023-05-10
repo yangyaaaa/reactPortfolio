@@ -35,7 +35,7 @@ export const Skills = () => {
             <div className="row">
                 <div className="col-12">
                     <div className="skill-bx wow zoomIn">
-                        <h2>About Me</h2>
+                        <h2>{'{ About Me }'}</h2>
                         <p>I'm a very ambitious front-end developer looking for a role in an
                          international company <br></br> with the opportunity to work with the latest
                           technologies on challenging and diverse projects.
@@ -72,7 +72,6 @@ export const Skills = () => {
                 </div>
             </div>
         </div>
-        <img className="background-image-left" src={colorSharp} alt="Image" />
     </section>
   )
 }
