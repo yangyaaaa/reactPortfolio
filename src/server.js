@@ -5,18 +5,18 @@ const nodemailer = require("nodemailer");
 
 // server used to send emails
 const app = express();
-app.use(cors());
-app.use(express.json());
+const bodyParser = require("body-parser");
+app.use(bodyParser.json());
 app.use("/", router);
 app.listen(5000, () => console.log("Server Running"));
 console.log(process.env.EMAIL_USER);
 console.log(process.env.EMAIL_PASS);
 
 const contactEmail = nodemailer.createTransport({
-  service: 'qq',
+  service: 'gmail',
   auth: {
-    user: "150203531@qq.com",
-    pass: "ham-fishsp0218"
+    user: "graceou919@gmail.com",
+    pass: "yuki62442"
   },
 });
 
