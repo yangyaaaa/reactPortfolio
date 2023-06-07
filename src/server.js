@@ -29,17 +29,17 @@ contactEmail.verify((error) => {
 });
 
 router.post("/contact", (req, res) => {
-  const name = req.body.firstName + req.body.lastName;
+  const name = req.body.Name;
   const email = req.body.email;
   const message = req.body.message;
-  const phone = req.body.phone;
+  const subject = req.body.subject;
   const mail = {
     from: name,
     to: "150203531@qq.com",
     subject: "Contact Form Submission - Portfolio",
     html: `<p>Name: ${name}</p>
            <p>Email: ${email}</p>
-           <p>Phone: ${phone}</p>
+           <p>Subject: ${subject}</p>
            <p>Message: ${message}</p>`,
   };
   contactEmail.sendMail(mail, (error) => {
