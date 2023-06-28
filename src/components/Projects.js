@@ -1,16 +1,35 @@
-import { Container } from "react-bootstrap";
+import { useState, useEffect } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import AnimatedLetters from "./AnimatedLetters";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
 import projImg4 from "../assets/img/project-img4.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 
-export const Projects = () => {
+const Projects = () => {
+  const [letterClass, setLetterClass] = useState('text-animate')
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setLetterClass('text-animate-hover');
+    }, 3000);
+
+    return () => clearTimeout(timeoutId);
+  }, []);
 
   return (
-    <section className="project">
-      <Container>
-              <h2>Projects</h2>
+    <div id="projects">
+    <Container style={{ marginTop: '100px', marginLeft: '300px', marginRight: 'auto' }}>
+       <Row className="align-items-center">
+        <Col xs={12} md={6} xl={7}>
+      <h1 className="about-h1">
+        <AnimatedLetters
+          letterClass={letterClass}
+          strArray={['P', 'r', 'o', 'j', 'e', 'c', 't', 's']}
+          idx={15}
+        />
+          </h1>
               <div className="projectcard"> 
                 <h3>Business Website</h3>
                 <div> 
@@ -51,9 +70,12 @@ export const Projects = () => {
                 <img className="project-image" src={projImg3} alt= "portfolio"></img>
                 <a href="https://github.com/yangyaaaa/reactPortfolio" target="_blank" rel="noopener noreferrer">👉Check on github repository.</a>
               </div>
-  
-      </Container>
       <img className="background-image-right" src={colorSharp2}></img>
-    </section>
+    </Col>
+    </Row>
+  </Container>
+  </div>
   )
 }
+
+export default Projects

@@ -1,76 +1,65 @@
-import react from "../assets/img/react.png";
-import redux from "../assets/img/redux.png";
-import html from "../assets/img/html.png";
-import css from "../assets/img/css.png";
-import JavaScript from "../assets/img/JavaScript.png";
-import Python from "../assets/img/Python.png";
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
+import { useEffect, useState } from "react";
+import AnimatedLetters from "./AnimatedLetters";
+import { Container, Row, Col } from "react-bootstrap";
+import "../App.css";
 
-export const Skills = () => {
-  const responsive = {
-    superLargeDesktop: {
+const Skills = () => {
+  const [letterClass, setLetterClass] = useState('text-animate')
 
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1
-    }
-  };
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setLetterClass('text-animate-hover');
+    }, 3000);
+
+    return () => clearTimeout(timeoutId);
+  }, []);
 
   return (
-    <section className="skill" id="skills">
-        <div className="container">
-            <div className="row">
-                <div className="col-12">
-                    <div className="skill-bx wow zoomIn">
-                        <h2>{'{ About Me }'}</h2>
-                        <p>I'm a very ambitious front-end developer looking for a role in an
-                         international company <br></br> with the opportunity to work with the latest
-                          technologies on challenging and diverse projects.
-                          <br></br>I'm quiet confident, naturally curious, and perpetually working on
-                          improving my chops one design problem at a time.
-                          </p>
-                        <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
-                            <div className="item">
-                                <img src={react} alt="Image" />
-                                <h5>React</h5>
-                            </div>
-                            <div className="item">
-                                <img src={redux} alt="Image" />
-                                <h5>Redux</h5>
-                            </div>
-                            <div className="item">
-                                <img src={html} alt="Image" />
-                                <h5>HTML5</h5>
-                            </div>
-                            <div className="item">
-                                <img src={css} alt="Image" />
-                                <h5>CSS3</h5>
-                            </div>
-                            <div className="item">
-                                <img src={JavaScript} alt="Image" />
-                                <h5>Javascript</h5>
-                            </div>
-                            <div className="item">
-                                <img src={Python} alt="Image" />
-                                <h5>Python</h5>
-                            </div>
-                        </Carousel>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+   <div id="skills">
+    <Container style={{ marginTop:'100px', marginLeft: '300px', marginRight: 'auto' }}>
+       <Row className="align-items-center">
+        <Col xs={12} md={6} xl={7}>
+      <h1 className="about-h1">
+        <AnimatedLetters
+          letterClass={letterClass}
+          strArray={['S', 'k', 'i', 'l', 'l', 's']}
+          idx={15}
+        />
+          </h1>
+          <div className="container">
+          <div className="text-container">
+          <p>
+          Expert in front-end development including technologies like
+            <span class="tech-tag"> HTML5</span>,
+            <span class="tech-tag"> CSS3</span>,
+            <span class="tech-tag"> JavaScript</span>,
+            <span class="tech-tag"> Python</span>,
+            <span class="tech-tag"> React</span>,
+            <span class="tech-tag"> Redux</span>,
+            <span class="tech-tag"> Bootstrap</span>,
+            <span class="tech-tag"> React Native</span>,
+            <span class="tech-tag"> Git</span>, etc.
+          </p>
+          <p>
+            Visit my
+            <a
+              onclick="ga('send', {'hitType': 'event', 'eventCategory': 'Skills Page', 'eventAction': 'Link Clicked', 'eventLabel': 'Linkedin profile' });"
+              target="_blank"
+              href="https://www.linkedin.com/in/yangya-lackner/"
+              > LinkedIn </a> profile for more details. Also you can checkout my resume on this
+            <a
+              target="_blank"
+              href="#"
+              > Link
+            </a>.
+          </p>
+          </div>
+          </div>
+          </Col>
+       </Row>
+    </Container>
+   </div>
   )
 }
+
+export default Skills
