@@ -4,7 +4,8 @@ This is a portfolio website based on React.js
 The website includes my projects and skills. I also designed my logo with a caticorn.
 It means everything is possible if you dare to dream about it!
 I hope you enjoying that!
-P.S. the original code is from: https://github.com/judygab/web-dev-projects/tree/main/personal-portfolio
+P.S. Reference from: https://github.com/judygab/web-dev-projects/tree/main/personal-portfolio
+https://github.com/bobangajicsm/react-portfolio-website
 
 # Project screen shot
 
