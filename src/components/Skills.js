@@ -49,7 +49,7 @@ const Skills = () => {
               > LinkedIn </a> profile for more details. Also you can checkout my resume on this
             <a
               target="_blank"
-              href="https://github.com/yangyaaaa/reactPortfolio/blob/master/src/assets/Lebenslauf.pdf"
+              href="https://github.com/yangyaaaa/reactPortfolio/blob/master/src/assets/img/Lebenslauf_yangya.pdf"
               > Link
             </a>.
           </p>
